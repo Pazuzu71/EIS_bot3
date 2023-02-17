@@ -1,6 +1,5 @@
 import asyncio
 import aioftp
-from config import host, port, login, password
 import os
 
 

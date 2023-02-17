@@ -3,10 +3,19 @@ from aiogram import types, F, Dispatcher
 from aiogram.filters import Command
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 from ftp.ftp_download import get_list
-from config import host, port, login, password
+from config import load_config
 
 
-btn: KeyboardButton = KeyboardButton(text = 'скачать')
+settings = load_config(None)
+
+
+host = settings.ftp_conf.host
+port = settings.ftp_conf.port
+login = settings.ftp_conf.login
+password = settings.ftp_conf.password
+
+
+btn: KeyboardButton = KeyboardButton(text='скачать')
 kb: ReplyKeyboardMarkup = ReplyKeyboardMarkup(keyboard=[[btn]], resize_keyboard=True)
 
 
