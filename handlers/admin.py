@@ -10,7 +10,7 @@ btn: KeyboardButton = KeyboardButton(text = 'скачать')
 kb: ReplyKeyboardMarkup = ReplyKeyboardMarkup(keyboard=[[btn]], resize_keyboard=True)
 
 
-async def dowload_from_ftp_current(msg: types.Message):
+async def download_from_ftp_current(msg: types.Message):
     await bot.send_message(chat_id=msg.from_user.id, text='Нажми скачать, чтобы закачать целую папку с ФТП', reply_markup=kb)
 
 
@@ -20,5 +20,5 @@ async def get_from_frp(msg: types.Message):
 
 
 def register_handlers_admin(dp: Dispatcher):
-    dp.message.register(dowload_from_ftp_current, Command(commands=['down'], ignore_case=True))
+    dp.message.register(download_from_ftp_current, Command(commands=['down'], ignore_case=True))
     dp.message.register(get_from_frp, F.text == 'скачать')

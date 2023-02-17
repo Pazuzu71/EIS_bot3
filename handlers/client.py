@@ -13,6 +13,7 @@ async def start(msg: types.Message):
         # TODO надо где-то хранить настройки по умолчанию, временно в словаре в конфиге, переделать на базу
     else:
         await msg.delete()
+        # await bot.send_message(msg.from_user.id, str(msg.from_user.id))
         await bot.send_message(msg.from_user.id, 'Настройки по умолчанию')
 
 
