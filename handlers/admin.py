@@ -7,8 +7,6 @@ from config import load_config
 
 
 settings = load_config(None)
-
-
 host = settings.ftp_conf.host
 port = settings.ftp_conf.port
 login = settings.ftp_conf.login

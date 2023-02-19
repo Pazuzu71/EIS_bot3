@@ -25,10 +25,10 @@ class conf:
     bot_conf: BOT_config
 
 
-def load_config(PATH: str | None):
+def load_config(path: str | None):
 
     env = Env()  # Создаем экземпляр класса Env
-    env.read_env()  # Методом read_env() читаем файл .env и загружаем из него переменные в окружение
+    env.read_env(path)  # Методом read_env() читаем файл .env и загружаем из него переменные в окружение
 
     return conf(
         ftp_conf=FTP_config(
